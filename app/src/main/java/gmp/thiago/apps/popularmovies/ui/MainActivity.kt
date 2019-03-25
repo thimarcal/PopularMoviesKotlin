@@ -1,7 +1,8 @@
-package gmp.thiago.apps.popularmovies
+package gmp.thiago.apps.popularmovies.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import gmp.thiago.apps.popularmovies.R
 
 class MainActivity : AppCompatActivity() {
 
