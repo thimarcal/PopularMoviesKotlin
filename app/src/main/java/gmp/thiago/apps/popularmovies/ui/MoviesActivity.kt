@@ -14,13 +14,17 @@ import retrofit2.Response
 
 class MoviesActivity : AppCompatActivity() {
 
+    val app: PopularMoviesApplication by lazy {
+        PopularMoviesApplication.instance
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        PopularMoviesApplication.instance.component.inject(this)
+        app.component.inject(this)
 
-        var retrofit = PopularMoviesApplication.instance.retrofit
+        var retrofit = app.retrofit
 
         var moviesCall = retrofit.create(PopularMoviesApi::class.java).getPopularMovies()
         moviesCall.enqueue(object : Callback<MovieListResult> {
@@ -33,5 +37,13 @@ class MoviesActivity : AppCompatActivity() {
                 Log.d("Thiago", "onFailure ${t.message}")
             }
         })
+
+        var sharedPreferences = app.sharedPreferences
+
+        if (sharedPreferences.contains("teste")) {
+            Log.d("Thiago", "teste: ${sharedPreferences.getString("teste", "vazio")}")
+        } else {
+            sharedPreferences.edit().putString("teste", "MyTestValue").apply()
+        }
     }
 }

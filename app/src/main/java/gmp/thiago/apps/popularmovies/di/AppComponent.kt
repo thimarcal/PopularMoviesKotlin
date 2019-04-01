@@ -5,7 +5,7 @@ import gmp.thiago.apps.popularmovies.PopularMoviesApplication
 import gmp.thiago.apps.popularmovies.ui.MoviesActivity
 import javax.inject.Singleton
 
-@Component (modules = [AppModule::class, NetModule::class])
+@Component (modules = [AppModule::class, NetModule::class, DataModule::class])
 @Singleton
 interface AppComponent {
     fun inject(component: PopularMoviesApplication)
