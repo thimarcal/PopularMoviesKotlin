@@ -2,7 +2,6 @@ package gmp.thiago.apps.popularmovies.retrofit
 
 import gmp.thiago.apps.popularmovies.BuildConfig
 import gmp.thiago.apps.popularmovies.model.MovieListResult
-import gmp.thiago.apps.popularmovies.model.Movies
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
